@@ -1,0 +1,52 @@
+[user]
+	email = charles.maynard@lexmark.com
+	name = Mark Maynard
+
+[push]
+	default = nothing
+
+[color]
+	ui = auto
+ 	interactive = auto
+
+[core]
+ 	pager = less -FXRS
+ 	editor = gedit
+	autocrlf = input
+ 	excludesfile = /home/jreckner/.gitignore_global
+
+[alias]
+	st = status
+ 	ci = commit
+ 	br = branch
+ 	co = checkout
+ 	rb = rebase
+	rbi = rebase -i
+        mg = merge --no-ff
+ 	llog = log -a --pretty=oneline
+ 	plog = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+ 	dlog = log --stat --abbrev-commit
+ 	team = shortlog -sn
+ 	numci = !git log -a --pretty=oneline | wc -l
+ 	lol = log --decorate --graph --all --pretty=oneline --abbrev-commit
+ 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+        fr = !git fetch --prune && git rebase
+
+[web]
+	browser = google-chrome
+
+[credential]
+ 	helper = cache
+
+[diff]
+ 	tool = meld
+
+[difftool]
+ 	prompt = false
+
+[merge]
+ 	tool = meld
+
+[mergetool]
+ 	prompt = false
+ 	keepBackup = false
